@@ -54,7 +54,7 @@ feel free to plug in your own sampler, MCMC or otherwise.
 
 ## Software requirements
 
-- python 3.x
+- python 2.7.x or 3.x
 - MPI (optional)
 - mpi4py
 - [multinest](http://ccpforge.cse.rl.ac.uk/gf/project/multinest)
