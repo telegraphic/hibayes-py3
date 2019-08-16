@@ -4,7 +4,11 @@
 Tools/decorator for code profiling
 """
 
-import builtins
+import six
+if six.PY2:
+    import __builtin__ as builtins
+else:
+    import builtins
 
 try:
     profile = builtins.profile

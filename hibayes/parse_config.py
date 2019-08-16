@@ -4,8 +4,11 @@
 Functions for parsing a .ini formatted configuration file
 
 """
-
-from configparser import ConfigParser
+import six
+if six.PY2:
+    from ConfigParser import SafeConfigParser
+else:
+    from configparser import ConfigParser
 import os
 
 #-------------------------------------------------------------------------------
@@ -20,7 +23,10 @@ def parse_config(filename):
         confdict (dict): Python dictionary of runtime parameters, as generated from config file.
     """
 
-    config = ConfigParser(comment_prefixes=('#', ';'), inline_comment_prefixes=('#', ';'))
+    if six.PY2:
+        config = SafeConfigParser()
+    else:
+        config = ConfigParser(comment_prefixes=('#', ';'), inline_comment_prefixes=('#', ';'))
     config.read(filename)
 
     confdict = {}
