@@ -26,7 +26,7 @@ if True:
         errors = numpy.genfromtxt(rp["spectrum_errors"])
         FREQ_MIN = freqs[0]
         FREQ_MAX = freqs[-1]
-
+        
 #-------------------------------------------------------------------------------
 
 pri = Priors()

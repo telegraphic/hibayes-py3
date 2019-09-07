@@ -122,7 +122,7 @@ def main():
     s[:, 0] = freqs
 
     #print '# ibin flux fit low high dlower dupper skew kurtosis'
-    for ibin in xrange(nfreqs):
+    for ibin in range(nfreqs):
         x = recons[:, ibin]
         # Remove NaNs from stats vectors
         # http://stackoverflow.com/questions/11620914/removing-nan-values-from-an-array
